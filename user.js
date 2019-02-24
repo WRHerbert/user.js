@@ -5,6 +5,27 @@
  ******************************************************************************/
 
 /******************************************************************************
+ * SECTION: CUSTOM                                                            *
+ ******************************************************************************/
+
+// PREF: Controls how much referrer to send regardless of origin, 2 = only send the origin
+// https://wiki.mozilla.org/Security/Referrer
+ user_pref("network.http.referer.trimmingPolicy", 2);
+
+// PREF: Set the default search engine to DuckDuckGo 
+// https://support.mozilla.org/en-US/questions/948134
+user_pref("browser.search.defaultenginename", "DuckDuckGo");
+user_pref("browser.search.order.1", "DuckDuckGo");
+user_pref("keyword.URL", "https://duckduckgo.com/html/?q=!+");
+
+// PREF: Additional settings to disable WebRTC
+// https://www.privacytools.io/#webrtc
+user_pref("media.peerconnection.turn.disable", true);
+user_pref("media.peerconnection.use_document_iceservers", false);
+user_pref("media.peerconnection.video.enabled", false);
+user_pref("media.peerconnection.identity.timeout", 1);
+
+/******************************************************************************
  * SECTION: HTML5 / APIs / DOM                                                *
  ******************************************************************************/
 
@@ -233,7 +254,7 @@ user_pref("javascript.use_us_english_locale",			true);
 
 // PREF: Do not submit invalid URIs entered in the address bar to the default search engine
 // http://kb.mozillazine.org/Keyword.enabled
-user_pref("keyword.enabled",					false);
+user_pref("keyword.enabled",					true);
 
 // PREF: Don't trim HTTP off of URLs in the address bar.
 // https://bugzilla.mozilla.org/show_bug.cgi?id=665580
@@ -746,7 +767,7 @@ user_pref("network.cookie.thirdparty.sessionOnly",		true);
  * SECTION: Caching                                                            *
  ******************************************************************************/
 
-// PREF: Permanently enable private browsing mode
+// PREF: Permanently enable private browsing mode (disabled)
 // https://support.mozilla.org/en-US/kb/Private-Browsing
 // https://wiki.mozilla.org/PrivateBrowsing
 // NOTICE: You can not view or inspect cookies when in private browsing: https://bugzilla.mozilla.org/show_bug.cgi?id=823941
@@ -754,7 +775,7 @@ user_pref("network.cookie.thirdparty.sessionOnly",		true);
 // NOTICE: Private browsing breaks Kerberos authentication
 // NOTICE: Disables "Containers" functionality (see below)
 // NOTICE: "Always use private browsing mode" (browser.privatebrowsing.autostart) disables the possibility to use password manager: https://support.mozilla.org/en-US/kb/usernames-and-passwords-are-not-saved#w_private-browsing
-user_pref("browser.privatebrowsing.autostart",			true);
+// user_pref("browser.privatebrowsing.autostart",			true);
 
 // PREF: Do not download URLs for the offline cache
 // http://kb.mozillazine.org/Browser.cache.offline.enable
@@ -772,8 +793,8 @@ user_pref("privacy.clearOnShutdown.downloads",			true);
 user_pref("privacy.clearOnShutdown.formdata",			true);
 user_pref("privacy.clearOnShutdown.history",			true);
 user_pref("privacy.clearOnShutdown.offlineApps",		true);
-user_pref("privacy.clearOnShutdown.sessions",			true);
-user_pref("privacy.clearOnShutdown.openWindows",		true);
+user_pref("privacy.clearOnShutdown.sessions",			false);
+user_pref("privacy.clearOnShutdown.openWindows",		false);
 
 // PREF: Set time range to "Everything" as default in "Clear Recent History"
 user_pref("privacy.sanitize.timeSpan",				0);
