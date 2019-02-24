@@ -12,12 +12,6 @@
 // https://wiki.mozilla.org/Security/Referrer
  user_pref("network.http.referer.trimmingPolicy", 2);
 
-// PREF: Set the default search engine to DuckDuckGo 
-// https://support.mozilla.org/en-US/questions/948134
-user_pref("browser.search.defaultenginename", "DuckDuckGo");
-user_pref("browser.search.order.1", "DuckDuckGo");
-user_pref("keyword.URL", "https://duckduckgo.com/html/?q=!+");
-
 // PREF: Additional settings to disable WebRTC
 // https://www.privacytools.io/#webrtc
 user_pref("media.peerconnection.turn.disable", true);
@@ -656,12 +650,12 @@ user_pref("network.dns.blockDotOnion",				true);
 
 // PREF: Disable search suggestions in the search bar
 // http://kb.mozillazine.org/Browser.search.suggest.enabled
-user_pref("browser.search.suggest.enabled",			false);
+user_pref("browser.search.suggest.enabled",			true);
 
 // PREF: Disable "Show search suggestions in location bar results"
-user_pref("browser.urlbar.suggest.searches",			false);
+user_pref("browser.urlbar.suggest.searches",			true);
 // PREF: When using the location bar, don't suggest URLs from browsing history
-user_pref("browser.urlbar.suggest.history",			false);
+user_pref("browser.urlbar.suggest.history",			true);
 
 // PREF: Disable SSDP
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1111967
@@ -786,12 +780,12 @@ user_pref("browser.cache.offline.enable",			false);
 // NOTICE: Installing user.js will remove your browsing history, caches and local storage.
 // NOTICE: Installing user.js **will remove your saved passwords** (https://github.com/pyllyukko/user.js/issues/27)
 // NOTICE: Clearing open windows on Firefox exit causes 2 windows to open when Firefox starts https://bugzilla.mozilla.org/show_bug.cgi?id=1334945
-user_pref("privacy.sanitize.sanitizeOnShutdown",		true);
-user_pref("privacy.clearOnShutdown.cache",			true);
+user_pref("privacy.sanitize.sanitizeOnShutdown",		false);
+user_pref("privacy.clearOnShutdown.cache",				true);
 user_pref("privacy.clearOnShutdown.cookies",			true);
 user_pref("privacy.clearOnShutdown.downloads",			true);
 user_pref("privacy.clearOnShutdown.formdata",			true);
-user_pref("privacy.clearOnShutdown.history",			true);
+user_pref("privacy.clearOnShutdown.history",			false);
 user_pref("privacy.clearOnShutdown.offlineApps",		true);
 user_pref("privacy.clearOnShutdown.sessions",			false);
 user_pref("privacy.clearOnShutdown.openWindows",		false);
@@ -809,7 +803,7 @@ user_pref("privacy.cpd.history",				true);
 user_pref("privacy.cpd.sessions",				true);
 
 // PREF: Don't remember browsing history
-user_pref("places.history.enabled",				false);
+user_pref("places.history.enabled",				true);
 
 // PREF: Disable disk cache
 // http://kb.mozillazine.org/Browser.cache.disk.enable
